@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import firebase from "../firebase";
+import firestore from "@/firestore";
 const vagueQuantifiers = [
   "A Few",
   "A Couple",
@@ -37,12 +37,14 @@ export default function Results() {
   // Fetch the results from Firebase on component mount
   useEffect(() => {
     const fetchData = async () => {
-      const db = firebase.firestore();
       const results = {};
 
       for (const quantifier of vagueQuantifiers) {
         // Updated reference to vagueQuantifiers
-        const doc = await db.collection("quantifiers").doc(quantifier).get();
+        const doc = await firestore
+          .collection("quantifiers")
+          .doc(quantifier)
+          .get();
         if (doc.exists) {
           results[quantifier] = doc.data();
         }

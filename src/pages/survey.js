@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
-import Slider from '../components/Slider';
-import firebase from '../firebase';
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Slider from "../components/Slider";
+import firestore from "@/firestore";
 
 // List of vague quantifiers
 const vagueQuantifiers = [
@@ -53,8 +53,8 @@ export default function Survey() {
     event.preventDefault();
 
     // Save responses to Firebase
-    const docRef = await firebase.firestore().collection('responses').add({
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    const docRef = await firestore.collection("responses").add({
+      createdAt: new Date(),
       responses,
     });
 
@@ -75,7 +75,9 @@ export default function Survey() {
               <label className="block mb-1">Smallest</label>
               <Slider
                 value={responses[quantifier]?.smallest || 0}
-                setValue={(value) => handleSliderChange(quantifier, 'smallest', value)}
+                setValue={(value) =>
+                  handleSliderChange(quantifier, "smallest", value)
+                }
               />
             </div>
 
@@ -83,7 +85,9 @@ export default function Survey() {
               <label className="block mb-1">Largest</label>
               <Slider
                 value={responses[quantifier]?.largest || 0}
-                setValue={(value) => handleSliderChange(quantifier, 'largest', value)}
+                setValue={(value) =>
+                  handleSliderChange(quantifier, "largest", value)
+                }
               />
             </div>
 
@@ -91,13 +95,18 @@ export default function Survey() {
               <label className="block mb-1">Most Likely</label>
               <Slider
                 value={responses[quantifier]?.mostLikely || 0}
-                setValue={(value) => handleSliderChange(quantifier, 'mostLikely', value)}
+                setValue={(value) =>
+                  handleSliderChange(quantifier, "mostLikely", value)
+                }
               />
             </div>
           </div>
         ))}
 
-        <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">
+        <button
+          type="submit"
+          className="px-4 py-2 bg-blue-500 text-white rounded"
+        >
           Submit
         </button>
       </form>
