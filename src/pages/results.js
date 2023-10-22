@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import firebase from '../firebase';
-import { softQuantifiers } from '../constants';
+import { vagueQuantifiers } from '../constants'; // Updated reference to vagueQuantifiers
 
 // Page to display the results of the survey
 export default function Results() {
@@ -14,7 +14,7 @@ export default function Results() {
       const db = firebase.firestore();
       const results = {};
 
-      for (const quantifier of softQuantifiers) {
+      for (const quantifier of vagueQuantifiers) { // Updated reference to vagueQuantifiers
         const doc = await db.collection('quantifiers').doc(quantifier).get();
         if (doc.exists) {
           results[quantifier] = doc.data();

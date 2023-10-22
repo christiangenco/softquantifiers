@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import Slider from '../components/Slider';
 import firebase from '../firebase';
 
-// List of soft quantifiers
-const softQuantifiers = [
+// List of vague quantifiers
+const vagueQuantifiers = [
   "A Few",
   "A Couple",
   "Several",
@@ -64,10 +64,10 @@ export default function Survey() {
 
   return (
     <div className="container mx-auto px-4">
-      <h1 className="text-2xl font-bold mb-4">Soft Quantifiers Survey</h1>
+      <h1 className="text-2xl font-bold mb-4">Vague Quantifiers Survey</h1>
 
       <form onSubmit={handleSubmit}>
-        {softQuantifiers.map((quantifier) => (
+        {vagueQuantifiers.map((quantifier) => (
           <div key={quantifier} className="mb-8">
             <h2 className="text-xl font-bold mb-2">{quantifier}</h2>
 

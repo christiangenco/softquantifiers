@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Slider component for user input
+// Slider component for user input in the Vague Quantifiers survey
 export default function Slider({ value, setValue }) {
   return (
     <div className="flex flex-col items-center">

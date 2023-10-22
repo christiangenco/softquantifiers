@@ -5,18 +5,20 @@ export default function About() {
   return (
     <div className="container mx-auto px-4">
       <Head>
-        <title>About - Soft Quantifiers Survey</title>
+        // Updated the title to reflect the new name
+        <title>About - Vague Quantifiers Survey</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="my-4">
+        // Updated the heading to reflect the new name
         <h1 className="text-4xl font-bold text-center mb-4">
-          About Soft Quantifiers Survey
+          About Vague Quantifiers Survey
         </h1>
 
         <p className="text-lg text-center mb-4">
           This project is an exploration into the numerical interpretations of
-          soft quantifiers such as "most," "least," and "most likely." By
+          vague quantifiers such as "most," "least," and "most likely." By
           participating in the survey, you're contributing to a fascinating
           community exploration into the language-numerics intersection. The
           insights derived could fuel a better understanding of communication
@@ -26,7 +28,7 @@ export default function About() {
         <p className="text-lg text-center mb-4">
           Your input is anonymous and will only be used in aggregate to analyze
           trends and patterns. At the end of this survey, we'll share the
-          collective findings right here on SoftQuantifiers.com, offering a
+          collective findings right here on VagueQuantifiers.com, offering a
           unique glimpse into how our community quantifies the vague.
         </p>
 
