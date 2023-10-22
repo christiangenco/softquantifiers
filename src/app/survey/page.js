@@ -59,8 +59,8 @@ export default function Survey() {
 
         <div className="mb-6">
           <label className="block mb-1">
-            What's the <strong>smallest</strong> number of apples that could be
-            red for{" "}
+            In your opinion, what's the <strong>smallest</strong> number of
+            apples that could be red for{" "}
             <strong>
               "{quantifier.toLowerCase()} of the 10 apples are red"
             </strong>{" "}
@@ -76,8 +76,8 @@ export default function Survey() {
 
         <div className="mb-6">
           <label className="block mb-1">
-            What's the <strong>largest</strong> number of apples that could be
-            red for{" "}
+            In your opinion, what's the <strong>largest</strong> number of
+            apples that could be red for{" "}
             <strong>
               "{quantifier.toLowerCase()} of the 10 apples are red"
             </strong>{" "}

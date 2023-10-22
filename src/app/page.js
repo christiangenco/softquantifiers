@@ -16,24 +16,31 @@ export default function Home() {
         </h1>
         <h2 className="text-5xl text-center">🍎🍎🍎🍎🍎🍎🍏🍏🍏🍏</h2>
         <p className="text-lg my-4">
-          Our language is peppered with vague quantifiers—terms like "a few",
-          "several", "most", and "almost all". While they slide effortlessly
-          into daily conversation, the precise quantities they represent remain
-          nebulous.
+          How many is "a lot"? How about "a couple" or "several"?
         </p>
         <p className="text-lg my-4">
-          This survey aims to capture the public's interpretation of these
-          terms, casting light on the numerical range or specific amounts people
-          envision when they encounter these phrases. By participating, you're
-          contributing to a fascinating community exploration into the
-          language-numerics intersection. The insights derived could fuel a
-          better understanding of communication nuances, aiding educators,
-          communicators, and curious minds alike.
+          Our language is peppered with these <strong>vague quantifiers</strong>
+          —terms like "a few", "multiple", "most", and "almost all" don't have a
+          strict numerical definition even though they might initially sound
+          like they do. Using these terms can lead to miscommunication,
+          especially if the people using them don't realize how vague the terms
+          actually are.
         </p>
         <p className="text-lg my-4">
-          Your input is anonymous and will only be used in aggregate to analyze
-          trends and patterns. At the end of this survey, we'll show you the
-          results we've collected so far.
+          This survey aims to measure the precise vagueness of these vague
+          quantifiers. It was made by{" "}
+          <a
+            className="hover:underline text-blue-500"
+            href="https://twitter.com/cgenco"
+            target="_blank"
+          >
+            Christian Genco
+          </a>{" "}
+          in 2023 just for fun.
+        </p>
+        <p className="text-lg my-4">
+          Your input is anonymous and will only be used in aggregate. At the end
+          of this survey we'll show you the results we've collected so far.
         </p>
         <p className="text-lg my-4">
           Your perspective is a crucial piece of this linguistic puzzle. Thank
