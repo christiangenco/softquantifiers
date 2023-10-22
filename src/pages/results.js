@@ -1,34 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import firestore from "@/firestore";
-const vagueQuantifiers = [
-  "A Few",
-  "A Couple",
-  "Several",
-  "A Handful",
-  "Some",
-  "Many",
-  "A Little",
-  "A Lot",
-  "Numerous",
-  "A Smattering",
-  "A Sprinkling",
-  "Most",
-  "Multiple",
-  "A Majority",
-  "Few",
-  "Scads",
-  "A Slew",
-  "All",
-  "None",
-  "Every",
-  "The Majority of",
-  "Almost All",
-  "Nearly All",
-  "Virtually All",
-  "Hardly Any",
-  "Barely Any",
-];
+import vagueQuantifiers from "@/vagueQuantifiers";
+
 // Page to display the results of the survey
 export default function Results() {
   const router = useRouter();
