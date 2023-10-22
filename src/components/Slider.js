@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Slider({ value, setValue }) {
   // State to handle hover effect
   const [hoverValue, setHoverValue] = useState(value);
+
+  useEffect(() => {
+    setHoverValue(value);
+  }, [value]);
 
   // Function to handle click event on apple emojis
   const handleClick = (index) => {
@@ -20,19 +24,21 @@ export default function Slider({ value, setValue }) {
   };
 
   return (
-    <div className="flex dark:text-white">
+    <div className="flex dark:text-white text-xl md:text-4xl">
       {Array.from({ length: 11 }, (_, index) => (
         <div
           key={index}
-          className="mx-1 cursor-pointer text-4xl"
+          className="mx-0.5 md:mx-1 cursor-pointer"
           onClick={() => handleClick(index)}
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >
-          {index === 0 ? "❌" : index <= hoverValue ? "🍎" : "🍏"}
+          {index === 0 ? "0️⃣" : index <= hoverValue ? "🍎" : "🍏"}
         </div>
       ))}
-      <div className="text-4xl">{hoverValue}/10</div>
+      {hoverValue !== null && hoverValue !== undefined && (
+        <div className="">{hoverValue}/10</div>
+      )}
     </div>
   );
 }

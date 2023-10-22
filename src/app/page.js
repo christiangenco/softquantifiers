@@ -14,14 +14,14 @@ export default function Home() {
         <h1 className="text-4xl font-bold text-center my-8">
           Vague Quantifiers Survey
         </h1>
-        <p className="text-lg text-center mx-4">
-          Welcome to VagueQuantifiers.com, a platform dedicated to unveiling the
-          numerical mysteries behind common phrases. Our language is peppered
-          with vague quantifiers—terms like "a few", "several", "most", and
-          "almost all". While they slide effortlessly into daily conversation,
-          the precise quantities they represent remain nebulous.
+        <h2 className="text-5xl text-center">🍎🍎🍎🍎🍎🍎🍏🍏🍏🍏</h2>
+        <p className="text-lg my-4">
+          Our language is peppered with vague quantifiers—terms like "a few",
+          "several", "most", and "almost all". While they slide effortlessly
+          into daily conversation, the precise quantities they represent remain
+          nebulous.
         </p>
-        <p className="text-lg text-center mx-4">
+        <p className="text-lg my-4">
           This survey aims to capture the public's interpretation of these
           terms, casting light on the numerical range or specific amounts people
           envision when they encounter these phrases. By participating, you're
@@ -30,17 +30,14 @@ export default function Home() {
           better understanding of communication nuances, aiding educators,
           communicators, and curious minds alike.
         </p>
-        <p className="text-lg text-center mx-4">
+        <p className="text-lg my-4">
           Your input is anonymous and will only be used in aggregate to analyze
-          trends and patterns. At the end of this survey, we'll share the
-          collective findings right here on VagueQuantifiers.com, offering a
-          unique glimpse into how our community quantifies the vague.
+          trends and patterns. At the end of this survey, we'll show you the
+          results we've collected so far.
         </p>
-        <p className="text-lg text-center mx-4">
-          Slide into the inquiry, explore the questions, and contribute to
-          unveiling the numerical essence of vague quantifiers. Your perspective
-          is a crucial piece of this linguistic puzzle. Thank you for your
-          curiosity and participation!
+        <p className="text-lg my-4">
+          Your perspective is a crucial piece of this linguistic puzzle. Thank
+          you for your curiosity and participation!
         </p>
         <div className="flex justify-center my-8">
           <Link
