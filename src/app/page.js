@@ -6,18 +6,14 @@ export default function Home() {
   return (
     <div>
       <Head>
-        // Updating the title to reflect the new name
         <title>Vague Quantifiers Survey</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        // Updating the heading to reflect the new name
         <h1 className="text-4xl font-bold text-center my-8">
           Vague Quantifiers Survey
         </h1>
-
-        // Updating the introduction text to reflect the new name
         <p className="text-lg text-center mx-4">
           Welcome to VagueQuantifiers.com, a platform dedicated to unveiling the
           numerical mysteries behind common phrases. Our language is peppered
@@ -46,7 +42,6 @@ export default function Home() {
           is a crucial piece of this linguistic puzzle. Thank you for your
           curiosity and participation!
         </p>
-
         <div className="flex justify-center my-8">
           <Link
             href="/survey"

@@ -1,8 +1,8 @@
 // Import firebase from Firebase library
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 
 // Import Firestore to interact with the database
-import "firebase/firestore";
+import "firebase/compat/firestore";
 
 // Firebase configuration
 const firebaseConfig = {
