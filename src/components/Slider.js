@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Slider component for user input in the Vague Quantifiers survey
 export default function Slider({ value, setValue }) {

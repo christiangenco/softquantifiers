@@ -2,8 +2,19 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Deny all read and write operations by default
     match /{document=**} {
       allow read, write: if false;
+    }
+
+    // Allow read operations on the quantifiers collection for all users
+    match /quantifiers/{quantifierId} {
+      allow read: if true;
+    }
+
+    match /responses/{responseId} {
+      allow create: if true; // request.auth != null;
+      allow read: if false;
     }
   }
 }

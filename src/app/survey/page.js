@@ -1,36 +1,38 @@
+"use client";
+
 import { useState } from "react";
-import { useRouter } from "next/router";
-import Slider from "../components/Slider";
+import { useRouter } from "next/navigation";
+import Slider from "@/components/Slider";
 import firestore from "@/firestore";
 
 // List of vague quantifiers
 const vagueQuantifiers = [
+  "All",
+  "None",
   "A Few",
   "A Couple",
   "Several",
   "A Handful",
   "Some",
   "Many",
-  "A Little",
-  "A Lot",
-  "Numerous",
-  "A Smattering",
-  "A Sprinkling",
   "Most",
   "Multiple",
-  "A Majority",
-  "Few",
-  "Scads",
-  "A Slew",
-  "All",
-  "None",
-  "Every",
-  "The Majority of",
-  "Almost All",
-  "Nearly All",
-  "Virtually All",
-  "Hardly Any",
-  "Barely Any",
+  // "A Little",
+  // "A Lot",
+  // "Numerous",
+  // "A Smattering",
+  // "A Sprinkling",
+  // "A Majority",
+  // "Few",
+  // "Scads",
+  // "A Slew",
+  // "Every",
+  // "The Majority of",
+  // "Almost All",
+  // "Nearly All",
+  // "Virtually All",
+  // "Hardly Any",
+  // "Barely Any",
 ];
 
 export default function Survey() {
@@ -43,7 +45,7 @@ export default function Survey() {
       ...responses,
       [quantifier]: {
         ...responses[quantifier],
-        [key]: value,
+        [key]: Number(value),
       },
     });
   };
@@ -59,7 +61,7 @@ export default function Survey() {
     });
 
     // Redirect to results page
-    router.push(`/results/${docRef.id}`);
+    router.push(`/results`);
   };
 
   return (
@@ -69,10 +71,15 @@ export default function Survey() {
       <form onSubmit={handleSubmit}>
         {vagueQuantifiers.map((quantifier) => (
           <div key={quantifier} className="mb-8">
-            <h2 className="text-xl font-bold mb-2">{quantifier}</h2>
+            <h2 className="text-xl font-bold mb-2">
+              {quantifier} of the apples are red
+            </h2>
 
             <div className="mb-4">
-              <label className="block mb-1">Smallest</label>
+              <label className="block mb-1">
+                What's the <strong>smallest</strong> number of apples that could
+                be red for the above statement to be true?
+              </label>
               <Slider
                 value={responses[quantifier]?.smallest || 0}
                 setValue={(value) =>
@@ -82,7 +89,10 @@ export default function Survey() {
             </div>
 
             <div className="mb-4">
-              <label className="block mb-1">Largest</label>
+              <label className="block mb-1">
+                What's the <strong>largest</strong> number of apples that could
+                be red for the above statement to be true?
+              </label>
               <Slider
                 value={responses[quantifier]?.largest || 0}
                 setValue={(value) =>
@@ -92,7 +102,10 @@ export default function Survey() {
             </div>
 
             <div className="mb-4">
-              <label className="block mb-1">Most Likely</label>
+              <label className="block mb-1">
+                What's the <strong>most likely</strong> number of apples that
+                could be red for the above statement to be true?
+              </label>
               <Slider
                 value={responses[quantifier]?.mostLikely || 0}
                 setValue={(value) =>
