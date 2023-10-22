@@ -45,13 +45,12 @@ export default function Home() {
         </p>
 
         <div className="flex justify-center my-8">
-          <Link href="/survey">
-            <a
-              id="start-survey-button"
-              className="px-4 py-2 bg-blue-500 text-white rounded"
-            >
-              Start Survey
-            </a>
+          <Link
+            href="/survey"
+            id="start-survey-button"
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+          >
+            Start Survey
           </Link>
         </div>
       </main>
