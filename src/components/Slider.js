@@ -1,26 +1,37 @@
-import React from "react";
+import { useState } from "react";
 
-// Slider component for user input in the Vague Quantifiers survey
 export default function Slider({ value, setValue }) {
+  // State to handle hover effect
+  const [hoverValue, setHoverValue] = useState(value);
+
+  // Function to handle click event on apple emojis
+  const handleClick = (index) => {
+    setValue(index + 1);
+  };
+
+  // Function to handle mouse enter event on apple emojis
+  const handleMouseEnter = (index) => {
+    setHoverValue(index + 1);
+  };
+
+  // Function to handle mouse leave event on apple emojis
+  const handleMouseLeave = () => {
+    setHoverValue(value);
+  };
+
   return (
-    <div className="flex flex-col items-center">
-      {/* Slider input for user to select a value */}
-      <input
-        type="range"
-        min="0"
-        max="10"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="slider my-4"
-      />
-      {/* Visual representation of the slider value using apple emojis */}
-      <div className="flex">
-        {Array.from({ length: 10 }, (_, index) => (
-          <div key={index} className="mx-1">
-            {index < value ? "🍎" : "🍏"}
-          </div>
-        ))}
-      </div>
+    <div className="flex">
+      {Array.from({ length: 10 }, (_, index) => (
+        <div
+          key={index}
+          className="mx-1 cursor-pointer text-3xl"
+          onClick={() => handleClick(index)}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
+        >
+          {index < hoverValue ? "🍎" : "🍏"}
+        </div>
+      ))}
     </div>
   );
 }

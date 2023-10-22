@@ -90,19 +90,6 @@ export default function Survey() {
 
             <div className="mb-4">
               <label className="block mb-1">
-                What's the <strong>largest</strong> number of apples that could
-                be red for the above statement to be true?
-              </label>
-              <Slider
-                value={responses[quantifier]?.largest || 0}
-                setValue={(value) =>
-                  handleSliderChange(quantifier, "largest", value)
-                }
-              />
-            </div>
-
-            <div className="mb-4">
-              <label className="block mb-1">
                 What's the <strong>most likely</strong> number of apples that
                 could be red for the above statement to be true?
               </label>
@@ -110,6 +97,19 @@ export default function Survey() {
                 value={responses[quantifier]?.mostLikely || 0}
                 setValue={(value) =>
                   handleSliderChange(quantifier, "mostLikely", value)
+                }
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block mb-1">
+                What's the <strong>largest</strong> number of apples that could
+                be red for the above statement to be true?
+              </label>
+              <Slider
+                value={responses[quantifier]?.largest || 0}
+                setValue={(value) =>
+                  handleSliderChange(quantifier, "largest", value)
                 }
               />
             </div>
