@@ -1,3 +1,4 @@
+```javascript
 import React from 'react';
 
 // Slider component for user input
@@ -24,3 +25,4 @@ export default function Slider({ value, setValue }) {
     </div>
   );
 }
+```

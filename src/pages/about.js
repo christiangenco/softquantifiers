@@ -1,3 +1,4 @@
+```javascript
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -28,12 +29,13 @@ export default function About() {
 
         <div className="flex justify-center mt-8">
           <Link href="/">
-            <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Back to Home
-            </a>
+            </button>
           </Link>
         </div>
       </main>
     </div>
   )
 }
+```

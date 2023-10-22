@@ -1,3 +1,4 @@
+```javascript
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Slider from '../components/Slider';
@@ -104,3 +105,4 @@ export default function Survey() {
     </div>
   );
 }
+```
