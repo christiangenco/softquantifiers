@@ -1,17 +1,18 @@
 // Import firebase from Firebase library
-import firebase from 'firebase/app';
+import firebase from "firebase/app";
 
 // Import Firestore to interact with the database
-import 'firebase/firestore';
+import "firebase/firestore";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyB9zxMNr3DVyOOVCmNTEDzXRLWXywXDoPM",
+  authDomain: "vaguequantifiers.firebaseapp.com",
+  projectId: "vaguequantifiers",
+  storageBucket: "vaguequantifiers.appspot.com",
+  messagingSenderId: "916915795728",
+  appId: "1:916915795728:web:9632b6c5715630cdb21795",
+  measurementId: "G-650NVTXG78",
 };
 
 // Initialize Firebase
