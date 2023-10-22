@@ -2,13 +2,12 @@
 require 'fileutils'
 
 # Glob all JavaScript files in the current directory
-Dir.glob('src/**/*.js').each do |filename|
-  p filename
-
+Dir.glob('src/**/*.{js,css,rules}').each do |filename|
   lines = File.readlines(filename)
 
   # Check if the first line is a starting code fence and the last line is an ending code fence
   if lines.first.chomp.index("```") === 0 && lines.last.chomp == "```"
+    p filename
     # Remove the first and last lines
     lines.shift
     lines.pop
