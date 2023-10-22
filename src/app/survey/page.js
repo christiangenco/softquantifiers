@@ -5,35 +5,7 @@ import { useRouter } from "next/navigation";
 import Slider from "@/components/Slider";
 import firestore from "@/firestore";
 
-// List of vague quantifiers
-const vagueQuantifiers = [
-  "All",
-  "None",
-  "A Few",
-  "A Couple",
-  "Several",
-  "A Handful",
-  "Some",
-  "Many",
-  "Most",
-  "Multiple",
-  // "A Little",
-  // "A Lot",
-  // "Numerous",
-  // "A Smattering",
-  // "A Sprinkling",
-  // "A Majority",
-  // "Few",
-  // "Scads",
-  // "A Slew",
-  // "Every",
-  // "The Majority of",
-  // "Almost All",
-  // "Nearly All",
-  // "Virtually All",
-  // "Hardly Any",
-  // "Barely Any",
-];
+import vagueQuantifiers from "@/vagueQuantifiers";
 
 export default function Survey() {
   const router = useRouter();
