@@ -1,8 +1,7 @@
 import { cache } from "react";
 import firestore from "@/firestore";
 
-// revalidate the data at most every hour
-export const revalidate = 3600;
+export const revalidate = 300;
 
 export default cache(async () => {
   const quantifiersRef = firestore.collection("quantifiers");

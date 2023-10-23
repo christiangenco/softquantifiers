@@ -25,9 +25,8 @@ export default async function Results() {
         }}
       />*/}
       {quantifiers.map((quantifier) => {
-        {
-          /*const data = {};*/
-        }
+        /*const data = {};*/
+
         return (
           <div key={quantifier} className="mb-8">
             <h2 className="text-2xl font-bold mb-2">{quantifier.id}</h2>
@@ -38,12 +37,12 @@ export default async function Results() {
             <Histogram data={quantifier.mostLikely} />
 
             <p className="mb-4">
-              "{quantifier.id}" of 10 items means at minimum:
+              "{quantifier.id}" of 10 items reasonably means at minimum:
             </p>
             <Histogram data={quantifier.smallest} />
 
             <p className="mb-4">
-              "{quantifier.id}" of 10 items means at maximum:
+              "{quantifier.id}" of 10 items reasonably means at maximum:
             </p>
             <Histogram data={quantifier.largest} />
           </div>
