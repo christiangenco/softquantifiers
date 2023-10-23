@@ -1,19 +1,46 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const { FieldValue } = require("firebase-admin/firestore");
 
-const {onRequest} = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
+admin.initializeApp();
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+const db = admin.firestore();
 
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+exports.updateQuantifiers = functions.firestore
+  .document("responses/{responseId}")
+  // .onWrite(async (snap, context) => {
+  //   const response = snap.after.data();
+  .onCreate(async (snap, context) => {
+    const response = snap.data();
+
+    const batch = db.batch();
+    Object.entries(response.responses).forEach(
+      ([quantifierId, { largest, mostLikely, smallest }]) => {
+        const quantifierRef = db.collection("quantifiers").doc(quantifierId);
+
+        // batch.update(quantifierRef, {
+        //   updatedAt: new Date(),
+        //   [`mostLikely.${mostLikely}`]: FieldValue.increment(1),
+        //   [`smallest.${smallest}`]: FieldValue.increment(1),
+        //   [`largest.${largest}`]: FieldValue.increment(1),
+        // });
+        batch.set(
+          quantifierRef,
+          {
+            updatedAt: new Date(),
+            mostLikely: {
+              [mostLikely]: FieldValue.increment(1),
+            },
+            largest: {
+              [largest]: FieldValue.increment(1),
+            },
+            smallest: {
+              [smallest]: FieldValue.increment(1),
+            },
+          },
+          { merge: true },
+        );
+      },
+    );
+    await batch.commit();
+  });
