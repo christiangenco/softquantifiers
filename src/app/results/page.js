@@ -26,27 +26,35 @@ export default async function Results() {
       />*/}
       {quantifiers.map((quantifier) => {
         /*const data = {};*/
-
+        const anchor = quantifier.id.replace(/\s+/g, "-").toLowerCase();
         return (
-          <div key={quantifier} className="mb-8">
-            <h2 className="text-2xl font-bold mb-2">{quantifier.id}</h2>
+          <div key={quantifier} className="mb-8" id={anchor}>
+            <h2 className="text-2xl font-bold mb-2">
+              {quantifier.id}{" "}
+              <a
+                href={`#${anchor}`}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                #
+              </a>
+            </h2>
             <p className="mb-4">
               According to the vaguequantifiers.com survey,
-              <strong>"{quantifier.id.toLowerCase()}"</strong> of 10 apples{" "}
+              <strong>"{quantifier.id.toLowerCase()}"</strong> of the 10 apples{" "}
               <strong>most likely</strong> means:
             </p>
             <Histogram data={quantifier.mostLikely} />
 
             <p className="mb-4">
               According to the vaguequantifiers.com survey,
-              <strong>"{quantifier.id.toLowerCase()}"</strong> of 10 apples
+              <strong>"{quantifier.id.toLowerCase()}"</strong> of the 10 apples
               reasonably means <strong>at minimum</strong>:
             </p>
             <Histogram data={quantifier.smallest} />
 
             <p className="mb-4">
               According to the vaguequantifiers.com survey,
-              <strong>"{quantifier.id.toLowerCase()}"</strong> of 10 apples
+              <strong>"{quantifier.id.toLowerCase()}"</strong> of the 10 apples
               reasonably means <strong>at maximum</strong>:
             </p>
             <Histogram data={quantifier.largest} />
