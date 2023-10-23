@@ -31,20 +31,23 @@ export default async function Results() {
           <div key={quantifier} className="mb-8">
             <h2 className="text-2xl font-bold mb-2">{quantifier.id}</h2>
             <p className="mb-4">
-              According to the vaguequantifiers.com survey, "{quantifier.id}" of
-              10 🍎 apples most likely means:
+              According to the vaguequantifiers.com survey,
+              <strong>"{quantifier.id.toLowerCase()}"</strong> of 10 apples{" "}
+              <strong>most likely</strong> means:
             </p>
             <Histogram data={quantifier.mostLikely} />
 
             <p className="mb-4">
-              According to the vaguequantifiers.com survey, "{quantifier.id}" of
-              10 🍎 apples reasonably means at minimum:
+              According to the vaguequantifiers.com survey,
+              <strong>"{quantifier.id.toLowerCase()}"</strong> of 10 apples
+              reasonably means <strong>at minimum</strong>:
             </p>
             <Histogram data={quantifier.smallest} />
 
             <p className="mb-4">
-              According to the vaguequantifiers.com survey, "{quantifier.id}" of
-              10 🍎 apples reasonably means at maximum:
+              According to the vaguequantifiers.com survey,
+              <strong>"{quantifier.id.toLowerCase()}"</strong> of 10 apples
+              reasonably means <strong>at maximum</strong>:
             </p>
             <Histogram data={quantifier.largest} />
           </div>
