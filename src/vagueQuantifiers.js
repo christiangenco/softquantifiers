@@ -1,4 +1,3 @@
-// List of vague quantifiers
 export default [
   "All",
   "None",
@@ -6,6 +5,8 @@ export default [
   "A few",
   "Several",
   "Almost all",
+  "Hardly any",
+  "Scads",
   "Most",
   "A couple",
   "A majority",
@@ -13,8 +14,6 @@ export default [
   "Many",
   "Multiple",
   "A lot",
-  "Scads",
-  // "Hardly any",
   // "A Little",
   // "Numerous",
   // "A Smattering",

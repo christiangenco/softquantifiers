@@ -1,4 +1,6 @@
-```
+```markdown
+# Soft Quantifier Survey Application
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -6,13 +8,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -21,9 +17,32 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Vague Quantifier Survey Application
+## About
 
 This application is designed to collect and analyze user data on vague quantifier interpretations. The application is hosted on [vaguequantifiers.com](http://vaguequantifiers.com).
+
+## Firebase Function
+
+A serverless function is implemented in `functions/index.js` that triggers on the creation of a document in the `responses` collection. This function iterates over each field in `response.responses` and updates the corresponding document in the `quantifiers` collection in a transaction. This ensures that the quantifiers are updated in real-time as new responses are added.
+
+### Testing the Function
+
+To test the function locally, you can use the Firebase Emulator Suite. Follow these steps:
+
+1. Install the Firebase CLI and login to your Firebase account.
+2. Initialize the Firebase Emulator Suite in your project directory.
+3. Start the emulators with `firebase emulators:start`.
+4. Add a new document to the `responses` collection and verify that the corresponding document in the `quantifiers` collection is updated correctly.
+
+### Deploying the Function
+
+Once you have tested the function and confirmed that it works as expected, you can deploy it to Firebase with the following command:
+
+```bash
+firebase deploy --only functions
+```
+
+This will make the function live and it will start processing new responses as they are added to the `responses` collection.
 
 ## Learn More
 
